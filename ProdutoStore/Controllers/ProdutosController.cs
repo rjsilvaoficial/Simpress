@@ -40,8 +40,9 @@ namespace ProdutoStore.Controllers
         // GET: Produtos/Create
         public ActionResult Create()
         {
+            var produtoVM = new ProdutoViewModel { ListaProdutos = db.Produtos.Include(p => p.Categoria).ToList() };
             ViewBag.CategoriaId = new SelectList(db.Categorias, "CategoriaId", "Nome");
-            return View();
+            return View(produtoVM);
         }
 
         // POST: Produtos/Create
@@ -49,7 +50,7 @@ namespace ProdutoStore.Controllers
         // obter mais detalhes, veja https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProdutoId,Nome,Descricao,Ativo,Perecivel,CategoriaId")] Produto produto)
+        public ActionResult Create([Bind(Include = "Nome,Descricao,Ativo,Perecivel,CategoriaId")] Produto produto)
         {
             if (ModelState.IsValid)
             {

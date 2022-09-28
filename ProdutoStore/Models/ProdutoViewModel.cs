@@ -1,19 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace ProdutoStore.Models
 {
-    [Table("tblProduto")]
-    public class Produto
+    public class ProdutoViewModel 
     {
-        [Key]
-        [Column("Id")]
-        public int ProdutoId { get; set; }
-
         [Required(ErrorMessage = "Nome não pode ser vazio!")]
         [StringLength(250, ErrorMessage = "Nome não pode exceder 250 caracteres")]
         public string Nome { get; set; }
@@ -26,5 +20,6 @@ namespace ProdutoStore.Models
         public bool Perecivel { get; set; }
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }
+        public List<Produto> ListaProdutos { get; set; }
     }
 }
