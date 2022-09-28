@@ -22,7 +22,11 @@ namespace ProdutoStore.Models
         [StringLength(250, ErrorMessage = "Descrição não pode exceder 250 caracteres")]
         //[RegularExpression("^[a - záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ] +$")]
         public string Descricao { get; set; }
+
+        [Required(ErrorMessage = "Produto deve ser marcado como ativo!")]
         public bool Ativo { get; set; }
+        [Required(ErrorMessage = "Perecível deve ser marcado como ativo!")]
+
         public bool Perecivel { get; set; }
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }

@@ -15,28 +15,6 @@ namespace ProdutoStore.Controllers
     {
         private ProdutoStoreContext db = new ProdutoStoreContext();
 
-        // GET: Produtos
-        public ActionResult Index()
-        {
-            var produtos = db.Produtos.Include(p => p.Categoria);
-            return View(produtos.ToList());
-        }
-
-        // GET: Produtos/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Produto produto = db.Produtos.Find(id);
-            if (produto == null)
-            {
-                return HttpNotFound();
-            }
-            return View(produto);
-        }
-
         // GET: Produtos/Create
         public ActionResult Create()
         {
@@ -56,7 +34,7 @@ namespace ProdutoStore.Controllers
             {
                 db.Produtos.Add(produto);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
 
             ViewBag.CategoriaId = new SelectList(db.Categorias, "CategoriaId", "Nome", produto.CategoriaId);
@@ -90,7 +68,7 @@ namespace ProdutoStore.Controllers
             {
                 db.Entry(produto).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
             ViewBag.CategoriaId = new SelectList(db.Categorias, "CategoriaId", "Nome", produto.CategoriaId);
             return View(produto);
@@ -119,7 +97,7 @@ namespace ProdutoStore.Controllers
             Produto produto = db.Produtos.Find(id);
             db.Produtos.Remove(produto);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Create");
         }
 
         protected override void Dispose(bool disposing)
