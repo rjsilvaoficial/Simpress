@@ -62,31 +62,32 @@
 
 </div>
 }
+<br/>
 
-
-<table class="table">
-    <tr>
-        <th>
-            Id
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </th>
-        <th>
-            Categoria de produto
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ativo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Perecivel)
-        </th>
-        <th></th>
-    </tr>
-
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                Categoria de produto
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Perecivel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
     @foreach (var item in Model.ListaProdutos)
     {
         <tr>
