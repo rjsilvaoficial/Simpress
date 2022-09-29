@@ -10,12 +10,10 @@ namespace ProdutoStore.Models
     {
         [Required(ErrorMessage = "Nome não pode ser vazio!")]
         [StringLength(250, ErrorMessage = "Nome não pode exceder 250 caracteres")]
-        [RegularExpression("^[a - záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ] +$", ErrorMessage = "Nome deve conter apenas texto!")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Descrição não pode ser vazio!")]
         [StringLength(250, ErrorMessage = "Descrição não pode exceder 250 caracteres")]
-        [RegularExpression("^[a - záàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ] +$", ErrorMessage = "Descrição deve conter apenas texto!")]
         public string Descricao { get; set; }
         public bool Ativo { get; set; }
         public bool Perecivel { get; set; }
