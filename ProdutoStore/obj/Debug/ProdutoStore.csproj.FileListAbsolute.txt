@@ -66,3 +66,4 @@ C:\Users\robso\Desktop\Simpress\ProdutoStore\obj\Debug\ProdutoStore.dll
 C:\Users\robso\Desktop\Simpress\ProdutoStore\obj\Debug\ProdutoStore.pdb
 C:\Users\robso\Desktop\Simpress\ProdutoStore\obj\Debug\ProdutoStore.Migrations.InitialCreate.resources
 C:\Users\robso\Desktop\Simpress\ProdutoStore\obj\Debug\ProdutoStore.csproj.GenerateResource.cache
+C:\Users\robso\Desktop\Simpress\ProdutoStore\obj\Debug\ProdutoStore.csproj.AssemblyReference.cache
